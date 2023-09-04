@@ -6,7 +6,7 @@ searchstr=$2
 
 if [ $# -eq 2 ]; then
 
-  if [ ! -d "$filesdir" ]; then
+  if [ ! -d $filesdir ]; then
 	echo "$filesdir is not a directory"
 	exit 1
   fi

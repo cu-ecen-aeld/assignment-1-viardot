@@ -9,7 +9,7 @@ if [ $# -eq 2 ]; then
     echo "${writestr}" > "${writefile}"
 
 	
-    if [ ! -d "$writefile"  ]; then
+    if [ ! -e "$writefile"  ]; then
         echo "error creating file" 
         exit 1
     fi

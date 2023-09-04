@@ -33,9 +33,10 @@ rm -rf "${WRITEDIR}"
 
 # create $WRITEDIR if not assignment1
 assignment=`cat ../conf/assignment.txt`
-
-if [ $assignment != 'assignment1' ]
+echo "1) $assignment" 
+if [ $assignment = 'assignment1' ]
 then
+    echo "2) $WRITEDIR" 
 	mkdir -p "$WRITEDIR"
 
 	#The WRITEDIR is in quotes because if the directory path consists of spaces, then variable substitution will consider it as multiple argument.
@@ -54,6 +55,7 @@ fi
 
 for i in $( seq 1 $NUMFILES)
 do
+    echo "$WRITEDIR/${username}$i.txt"
 	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
